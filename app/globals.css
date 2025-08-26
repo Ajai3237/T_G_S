@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+/* globals.css */
+/* body {
+  background-color: rgb(146, 137, 137);
+  margin: 0;
+  padding: 0;
+} */
+
+/*  */
+.accordion {
+  background: #EEEEF0;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+/* Label */
+.accordion-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+}
+
+/* Number on the left */
+.accordion-label .num {
+  margin-right: 10px;
+  color: #666;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Title in center */
+.accordion-label .title {
+  flex: 1;
+  text-align: center;
+  color: #000;
+}
+
+/* Arrow on the right */
+.accordion-label .arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Rotate arrow when open */
+input[type="checkbox"]:checked + .accordion-label .arrow {
+  transform: rotate(180deg);
+}
+
+/* Content box */
+.accordion .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  font-size: 13px;
+  color: #313131;
+  line-height: 1.8;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Expand content when checkbox is checked */
+input[type="checkbox"]:checked + .accordion-label + .content {
+  max-height: 1000px;  
+  padding-top: 15px;
+}
+
+
+/* Arrow */
+.accordion-label .arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  font-size: 14px;
+  color: #333;
+}
+
+input[type="checkbox"]:checked+.accordion-label .arrow {
+  transform: rotate(180deg);
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  font-size: 13px;
+  color: #313131;
+  line-height: 1.8;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+}
+
+input[type="checkbox"]:checked+.accordion-label+.content {
+  max-height: 300px;
+  padding-top: 10px;
+}
+
+
+
+
+/* parallax */
+.parallax {
+  background-image: url("/Assets/pexels-armin-rimoldi-5553657.jpg");
+  min-height: 392px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+  color: white;
+
+  /* align content left */
+  display: flex;
+  align-items: center;  /* vertically center */
+  text-align: left;
+}
+
+/* overlay for readability */
+.parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+}
+
+.parallax-content h2 {
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #FFFFFF; 
+  letter-spacing: 3px;
+}
+
+.parallax-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #f0f0f0;
+  letter-spacing: 1.5px;
+}
+
+
+/*  clients card */
+  @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @keyframes marquee2 {
+      0% {
+        transform: translateX(105%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+    .animate-marquee {
+      animation: marquee 19s linear infinite;
+    }
+    .animate-marquee2 {
+      animation: marquee2 19s linear infinite;
+    }
+
+
+    /* parallax partners */
+
+    /* parallax */
+.parallax2 {
+  background-image: url("/Assets/pexels-sora-shimazaki-5673475.jpg");
+  min-height: 392px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+  color: white;
+
+  /* align content left */
+  display: flex;
+  align-items: center;  /* vertically center */
+  text-align: left;
+}
+
+/* overlay for readability */
+.parallax2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.parallax-content2 {
+  position: relative;
+  z-index: 1;
+}
+
+
