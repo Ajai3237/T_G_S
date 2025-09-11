@@ -1,9 +1,79 @@
-import React from 'react'
+import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeadset, faShieldAlt, faThLarge, faClipboardList, faWindowRestore, faGlobe, faCloud } from '@fortawesome/free-solid-svg-icons'
 import { motion } from "framer-motion";
 
 function About() {
+    const [openModal, setOpenModal] = useState(null);
+    const [animate, setAnimate] = useState(false);
+
+    const services = [
+        {
+            id: 1,
+            icon: faHeadset,
+            title: "IT Solutions Staffing & Support",
+            description:
+                "We provide complete IT staffing and support solutions, ensuring your business runs smoothly with expert assistance.",
+        },
+        {
+            id: 2,
+            icon: faShieldAlt,
+            title: "Strong Security",
+            description:
+                "Advanced cybersecurity measures to protect your digital assets and sensitive data from modern threats.",
+        },
+        {
+            id: 3,
+            icon: faThLarge,
+            title: "Web Based Applications Development",
+            description:
+                "Custom web applications tailored to your business needs, with a focus on performance and scalability.",
+        },
+        {
+            id: 4,
+            icon: faClipboardList,
+            title: "Infrastructure Solution & Support",
+            description:
+                "Complete infrastructure setup, monitoring, and support to keep your IT environment reliable and secure.",
+        },
+        {
+            id: 5,
+            icon: faWindowRestore,
+            title: "Website Development",
+            description:
+                "Professional website design and development to enhance your brand presence and engage your customers.",
+        },
+        {
+            id: 6,
+            icon: faGlobe,
+            title: "Website Hosting",
+            description:
+                "Reliable and secure web hosting solutions with 24/7 uptime monitoring and customer support.",
+        },
+        {
+            id: 7,
+            icon: faCloud,
+            title: "Datacentre Solutions",
+            description:
+                "End-to-end datacentre management including cloud migration, server setup, and data security.",
+        },{
+            id: 8,
+            icon: faHeadset,
+            title: "IT Solutions Staffing & Support",
+            description:
+                "We provide complete IT staffing and support solutions, ensuring your business runs smoothly with expert assistance.",
+        }
+    ];
+
+    const openPopup = (service) => {
+        setOpenModal(service);
+        setTimeout(() => setAnimate(true), 10); // trigger animation
+    };
+
+    const closePopup = () => {
+        setAnimate(false);
+        setTimeout(() => setOpenModal(null), 300); // wait for animation before closing
+    };
     return (
         <>
             {/* GET TO KNOW US */}
@@ -13,82 +83,75 @@ function About() {
                         GET TO
                         <span style={{ color: "#FFAA01" }}> KNOW</span>  US
                     </h2>
-                    <p style={{
-                        fontSize: "13px",
-                        fontFamily: "'Roboto', sans-serif",
-                        color: "#313131",
-                        textAlign: "center",
-                        marginTop: '40px',
-                        letterSpacing: "1px",
-                        textTransform: "uppercase",
-                        lineHeight: "1.8",
-                    }}>
-                        We trust you will find our services useful to your business and we are keen to engage with you on challenging and interesting assignments that contribute to your growth. Our journey started over seven years ago, as a humble firm offering basic
-                        IT services to small and medium enterprises in Kerala. Today we have grown into a full-service Of software development, Web based applications, Website development and Hosting, professional IT  Infrastructure service provider that meets all your Business needs. Also We are providing the services like IT solution &
-                        support, Home office automation, IT Security Services, Connectivity services like MPLS, Internet Leased Lines, Broadband etc through our sisterconcern named RIDHITECH INDIA (P) LTD. We have dedicated team for offering Branding & Marketing services for your esteemed Organization. We are also part of MSME Service & GeM.
-                        Government e Marketplace (GeM) is a 100 percent Government owned & National Public Procurement Portal. GeM is dedicated e market for different goods. So we can provide wide range of support for your business. Today we have grown into a full-service Of professional IT
-                        / Infrastructure service provider that meets all your Business needs. We traits (TGS)
-                    </p>
+
                 </div>
 
                 {/* icons */}
                 <div style={{ padding: "60px 20px", backgroundColor: "#F3F1EE" }}>
                     <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-                        {/* ---- FIRST ROW  ---- */}
                         <div
-                            style={{
-                                display: "grid",
-                                gridTemplateColumns: "repeat(3, 1fr)",
-                                gap: "10px",
-                                justifyContent: "center",
-                                marginBottom: "40px",
-                                textAlign: "center",
-                            }}
+                            style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "30px", textAlign: "center", paddingTop: "20px", }}
                         >
-                            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                <FontAwesomeIcon icon={faHeadset} style={{ width: 55, height: 55, color: "#FFAA01" }} />
-                                <div style={{ fontSize: 13, marginTop: 10, fontFamily: "'Roboto', sans-serif", letterSpacing: "2px" }}>IT Solutions Staffing & Support</div>
-                            </div>
-                            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                <FontAwesomeIcon icon={faShieldAlt} style={{ width: 55, height: 55, color: "#FFAA01" }} />
-                                <div style={{ fontSize: 13, marginTop: 10, fontFamily: "'Roboto', sans-serif", letterSpacing: "2px" }}>Strong Security</div>
-                            </div>
-                            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                <FontAwesomeIcon icon={faThLarge} style={{ width: 55, height: 55, color: "#FFAA01" }} />
-                                <div style={{ fontSize: 13, marginTop: 10, fontFamily: "'Roboto', sans-serif", letterSpacing: "2px" }}>Web Based Applications Development</div>
-                            </div>
-                        </div>
-
-                        {/* ---- SECOND ROW  ---- */}
-                        <div
-                            style={{
-                                display: "grid",
-                                gridTemplateColumns: "repeat(4, 1fr)",
-                                gap: "30px",
-                                textAlign: "center",
-                                paddingTop: '35px'
-                            }}
-                        >
-                            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                <FontAwesomeIcon icon={faClipboardList} style={{ width: 55, height: 55, color: "#FFAA01" }} />
-                                <div style={{ fontSize: 13, marginTop: 10, fontFamily: "'Roboto', sans-serif", letterSpacing: "2px" }}>Infrastructure Solution & Support</div>
-                            </div>
-                            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                <FontAwesomeIcon icon={faWindowRestore} style={{ width: 55, height: 55, color: "#FFAA01" }} />
-                                <div style={{ fontSize: 13, marginTop: 10, fontFamily: "'Roboto', sans-serif", letterSpacing: "2px" }}>Website Development</div>
-                            </div>
-                            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                <FontAwesomeIcon icon={faGlobe} style={{ width: 55, height: 55, color: "#FFAA01" }} />
-                                <div style={{ fontSize: 13, marginTop: 10, fontFamily: "'Roboto', sans-serif", letterSpacing: "2px" }}>Website Hosting</div>
-                            </div>
-                            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                                <FontAwesomeIcon icon={faCloud} style={{ width: 55, height: 55, color: "#FFAA01" }} />
-                                <div style={{ fontSize: 13, marginTop: 10, fontFamily: "'Roboto', sans-serif", letterSpacing: "2px" }}>Datacentre Solutions</div>
-                            </div>
+                            {services.map((service) => (
+                                <div key={service.id}
+                                    style={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer", }}
+                                    onClick={() => openPopup(service)}>
+                                    <FontAwesomeIcon className="service-icon" icon={service.icon}
+                                        style={{ width: 55, height: 55, color: "#FFAA01", transition: "transform 0.3s ease" }} />
+                                    <div style={{ fontSize: 13, marginTop: 10, fontFamily: "'Roboto', sans-serif", letterSpacing: "2px", }} >
+                                        {service.title}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
+
+                    {/* ---- Modal Popup with Animation ---- */}
+                    {openModal && (
+                        <div style={{
+                            position: "fixed", top: 0, left: 0, right: 0, bottom: 0, display: "flex", justifyContent: "center",
+                            alignItems: "center", zIndex: 9999, background: "rgba(255, 255, 255, 0.1)",
+                            backdropFilter: "blur(2px)",             
+                            WebkitBackdropFilter: "blur(2px)",
+                        }}
+                            onClick={closePopup} 
+                        >
+                            <div style={{
+                                background: "rgba(255, 255, 255, 0.9)",
+                                padding: "30px",
+                                borderRadius: "12px",
+                                maxWidth: "500px",
+                                width: "90%",
+                                textAlign: "center",
+                                boxShadow: "0 8px 24px rgba(0,0,0,0.2)",      
+                                border: "1px solid rgba(255, 255, 255, 0.3)", 
+                                position: "relative",
+                                transform: animate ? "scale(1)" : "scale(0.7)",
+                                opacity: animate ? 1 : 0,
+                                transition: "all 0.3s ease-in-out",
+                            }}
+                                onClick={(e) => e.stopPropagation()} 
+                            >
+                                <h2 style={{ marginBottom: "15px" }}>{openModal.title}</h2>
+                                <p style={{ fontSize: "15px", color: "#555" }}>
+                                    {openModal.description}
+                                </p>
+                                <button onClick={closePopup} style={{
+                                    marginTop: "20px", background: "#FFAA01", border: "none", padding: "10px 20px", color: "#fff", borderRadius: "8px",
+                                    cursor: "pointer",
+                                }}
+                                >
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
+
+
+
+
 
             {/* Service */}
             <div style={{ padding: "60px 20px", backgroundColor: "#f9f9f9" }}>

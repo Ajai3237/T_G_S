@@ -83,15 +83,16 @@ function Home() {
   };
 
   return (
-    <div
-      style={{
-        width: "100%", height: "750px", position: "relative", backgroundImage: "url('/Assets/pexels-jakubzerdzicki-16071270.jpg')", backgroundSize: "cover",
-        backgroundPosition: "center", overflow: "hidden",
-      }}
-    >
+    <div style={{ width: "100%", height: "820px", position: "relative", overflow: "hidden", }}>
+      <video src="/Assets/tgs_video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", top: 0, left: 0, zIndex: -1, }} />
+
       {/* Dark overlay */}
-      <div
-        style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.4)", }}></div>
+      <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.5)", }}></div>
 
       {/* Arrows */}
       <motion.button

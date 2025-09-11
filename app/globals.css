@@ -210,3 +210,14 @@ input[type="checkbox"]:checked+.accordion-label+.content {
 }
 
 
+
+/* about icone */
+.service-icon {
+  transition: transform 0.3s ease;
+}
+.service-icon:hover {
+  transform: scale(1.2);
+}
+
+
+
