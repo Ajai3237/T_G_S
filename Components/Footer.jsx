@@ -4,8 +4,7 @@ function Footer() {
     return (
         <>
             <footer className="bg-[#1a1a1a] text-gray-300 py-10">
-                <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 sm:grid-cols-4  gap-10">
-
+                <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
                     {/* Column 1 */}
                     <div>
                         <p className="mb-4">
@@ -13,7 +12,7 @@ function Footer() {
                             Aspernatur Exercitationem Fugiat.
                         </p>
                         <h3 className="text-white font-semibold mb-3">Follow Us</h3>
-                        <div className="flex gap-3">
+                        <div className="flex justify-center md:justify-start gap-3">
                             <a
                                 href="https://www.facebook.com/TraitsGlobalSolutions"
                                 target="_blank"
@@ -45,16 +44,16 @@ function Footer() {
                     <div>
                         <h3 className="text-white font-semibold mb-4">Site Map</h3>
                         <ul className="space-y-2">
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> Home
                             </li>
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> About
                             </li>
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> Services
                             </li>
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> Contact
                             </li>
                         </ul>
@@ -64,13 +63,13 @@ function Footer() {
                     <div>
                         <h3 className="text-white font-semibold mb-4">Follow Us</h3>
                         <ul className="space-y-2">
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> Facebook
                             </li>
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> Instagram
                             </li>
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> Linkedin
                             </li>
                         </ul>
@@ -80,24 +79,25 @@ function Footer() {
                     <div>
                         <h3 className="text-white font-semibold mb-4">Our Services</h3>
                         <ul className="space-y-2">
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> Web Design
                             </li>
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> Web Development
                             </li>
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> Product Management
                             </li>
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> Marketing
                             </li>
-                            <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <span>&gt;</span> Graphic Design
                             </li>
                         </ul>
                     </div>
                 </div>
+
 
                 {/* Bottom Bar */}
                 <div className="mt-10 border-t border-gray-700 pt-5 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 text-sm text-gray-400">

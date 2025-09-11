@@ -24,7 +24,7 @@ function Header() {
             <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
 
                 {/* Logo */}
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 ">
                     <img
                         src="/Assets/logo.png"
                         alt="Logo"

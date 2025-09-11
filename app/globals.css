@@ -7,6 +7,9 @@
   padding: 0;
 } */
 
+/* logo */
+
+
 /*  */
 .accordion {
   background: #EEEEF0;
@@ -105,6 +108,7 @@ input[type="checkbox"]:checked+.accordion-label+.content {
 
 
 /* parallax */
+
 .parallax {
   background-image: url("/Assets/pexels-armin-rimoldi-5553657.jpg");
   min-height: 392px;
@@ -116,11 +120,20 @@ input[type="checkbox"]:checked+.accordion-label+.content {
   position: relative;
   color: white;
 
-  /* align content left */
   display: flex;
-  align-items: center;  /* vertically center */
+  align-items: center;
   text-align: left;
 }
+
+/* Fix for mobile screens */
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll; /* avoid buggy mobile zoom */
+    background-size: cover;      /* show full image instead of crop */
+    background-position: top center; /* better positioning */
+  }
+}
+
 
 /* overlay for readability */
 .parallax::before {

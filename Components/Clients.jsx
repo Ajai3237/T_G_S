@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { createContext } from 'react'; 
+import { createContext } from 'react';
 
 function Clients() {
     const cardVariants = {
@@ -19,11 +19,11 @@ function Clients() {
     // graph 
 
     const skills = [
-        {  value: 100, img: "/Assets/node_js-5dc52d652505be912bd2f11ab10af482605cbf9bbd5d9ab4178a64490f69f929.png" },
-        {  value: 90, img: "/Assets/css-CfW5UZaa.png" },
-        {  value: 75, img: "/Assets/images (3).png" },
-        {  value: 70, img: "/Assets/python.png" },
-        {  value: 75, img: "/Assets/images__4_-removebg-preview.png" },
+        { value: 100, img: "/Assets/node_js-5dc52d652505be912bd2f11ab10af482605cbf9bbd5d9ab4178a64490f69f929.png" },
+        { value: 90, img: "/Assets/css-CfW5UZaa.png" },
+        { value: 75, img: "/Assets/images (3).png" },
+        { value: 70, img: "/Assets/python.png" },
+        { value: 75, img: "/Assets/images__4_-removebg-preview.png" },
     ];
     return (
         <>
@@ -149,17 +149,24 @@ function Clients() {
                         </motion.p>
 
                         {/* Cards */}
-                        <div style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            flexWrap: "wrap",
-                            marginBottom: "50px",
-                            gap: "20px",
-                        }}
+                        <div
+                            style={{
+                                display: "flex",
+                                justifyContent: "center", // center cards
+                                flexWrap: "wrap",
+                                marginBottom: "50px",
+                                gap: "20px",
+                            }}
                         >
                             {cards.map((card, i) => (
-                                <motion.div className='backdrop-blur-md bg-white/20 border border-white/30 shadow-lg'
-                                    key={i} initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={cardVariants} whileHover={{ scale: 1.05 }}
+                                <motion.div
+                                    className="backdrop-blur-md bg-white/20 border border-white/30 shadow-lg"
+                                    key={i}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: false, amount: 0.2 }}
+                                    variants={cardVariants}
+                                    whileHover={{ scale: 1.05 }}
                                     style={{
                                         borderRadius: "10px",
                                         padding: "20px",
@@ -168,18 +175,23 @@ function Clients() {
                                     }}
                                 >
                                     {/* Card Image */}
-                                    <motion.img src={card.img}
+                                    <motion.img
+                                        src={card.img}
                                         style={{
                                             width: "100px",
                                             height: "100px",
                                             objectFit: "contain",
                                             margin: "0 auto 15px auto",
                                         }}
-                                        initial={{ scale: 0.8, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} transition={{ duration: 0.5 }} viewport={{ once: false }}
+                                        initial={{ scale: 0.8, opacity: 0 }}
+                                        whileInView={{ scale: 1, opacity: 1 }}
+                                        transition={{ duration: 0.5 }}
+                                        viewport={{ once: false }}
                                     />
                                 </motion.div>
                             ))}
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -221,7 +233,7 @@ function Clients() {
                     {skills.map((skill, i) => (
                         <div key={i} className="flex items-center gap-4">
                             {/* Left side image */}
-                            <Image src={skill.img} alt=''  width={40} height={40} />
+                            <Image src={skill.img} alt='' width={40} height={40} />
 
                             {/* Progress bar */}
                             <div className="flex-1 relative">
