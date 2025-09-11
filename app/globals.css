@@ -208,6 +208,14 @@ input[type="checkbox"]:checked+.accordion-label+.content {
   align-items: center;  /* vertically center */
   text-align: left;
 }
+@media (max-width: 768px) {
+  .parallax2 {
+    background-attachment: scroll; /* avoid buggy mobile zoom */
+    background-size: cover;      /* show full image instead of crop */
+    background-position: top center; /* better positioning */
+  }
+}
+
 
 /* overlay for readability */
 .parallax2::before {
