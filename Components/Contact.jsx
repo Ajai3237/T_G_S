@@ -71,7 +71,7 @@ function Contact() {
                                         <input type="text" placeholder="Subject" className="w-full p-3 rounded-lg bg-white/70 outline-none" />
                                     </div>
 
-                                    <input type="email" placeholder="Email" className="w-full p-3 rounded-lg bg-white/70 outline-none" x />
+                                    <input type="email" placeholder="Email" className="w-full p-3 rounded-lg bg-white/70 outline-none" />
 
                                     <textarea placeholder="Message" rows={5} className="w-full p-3 rounded-lg bg-white/70 outline-none resize-none"></textarea>
 
