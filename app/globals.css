@@ -53,7 +53,7 @@
 }
 
 /* Rotate arrow when open */
-input[type="checkbox"]:checked + .accordion-label .arrow {
+input[type="checkbox"]:checked+.accordion-label .arrow {
   transform: rotate(180deg);
 }
 
@@ -70,8 +70,8 @@ input[type="checkbox"]:checked + .accordion-label .arrow {
 }
 
 /* Expand content when checkbox is checked */
-input[type="checkbox"]:checked + .accordion-label + .content {
-  max-height: 1000px;  
+input[type="checkbox"]:checked+.accordion-label+.content {
+  max-height: 1000px;
   padding-top: 15px;
 }
 
@@ -128,9 +128,12 @@ input[type="checkbox"]:checked+.accordion-label+.content {
 /* Fix for mobile screens */
 @media (max-width: 768px) {
   .parallax {
-    background-attachment: scroll; /* avoid buggy mobile zoom */
-    background-size: cover;      /* show full image instead of crop */
-    background-position: top center; /* better positioning */
+    background-attachment: scroll;
+    /* avoid buggy mobile zoom */
+    background-size: cover;
+    /* show full image instead of crop */
+    background-position: top center;
+    /* better positioning */
   }
 }
 
@@ -140,7 +143,7 @@ input[type="checkbox"]:checked+.accordion-label+.content {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .parallax-content {
@@ -152,7 +155,7 @@ input[type="checkbox"]:checked+.accordion-label+.content {
   font-size: 34px;
   font-weight: bold;
   margin-bottom: 15px;
-  color: #FFFFFF; 
+  color: #FFFFFF;
   letter-spacing: 3px;
 }
 
@@ -165,33 +168,27 @@ input[type="checkbox"]:checked+.accordion-label+.content {
 
 
 /*  clients card */
-  @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-    @keyframes marquee2 {
-      0% {
-        transform: translateX(105%);
-      }
-      100% {
-        transform: translateX(0%);
-      }
-    }
-    .animate-marquee {
-      animation: marquee 19s linear infinite;
-    }
-    .animate-marquee2 {
-      animation: marquee2 19s linear infinite;
-    }
+/* Hide Scrollbar but keep scroll functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.animate-marquee {
+  animation: marquee 19s linear infinite;
+}
+
+.animate-marquee2 {
+  animation: marquee2 19s linear infinite;
+}
 
 
-    /* parallax partners */
+/* parallax partners */
 
-    /* parallax */
+/* parallax */
 .parallax2 {
   background-image: url("/Assets/pexels-sora-shimazaki-5673475.jpg");
   min-height: 392px;
@@ -205,14 +202,19 @@ input[type="checkbox"]:checked+.accordion-label+.content {
 
   /* align content left */
   display: flex;
-  align-items: center;  /* vertically center */
+  align-items: center;
+  /* vertically center */
   text-align: left;
 }
+
 @media (max-width: 768px) {
   .parallax2 {
-    background-attachment: scroll; /* avoid buggy mobile zoom */
-    background-size: cover;      /* show full image instead of crop */
-    background-position: top center; /* better positioning */
+    background-attachment: scroll;
+    /* avoid buggy mobile zoom */
+    background-size: cover;
+    /* show full image instead of crop */
+    background-position: top center;
+    /* better positioning */
   }
 }
 
@@ -222,7 +224,7 @@ input[type="checkbox"]:checked+.accordion-label+.content {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .parallax-content2 {
@@ -236,9 +238,7 @@ input[type="checkbox"]:checked+.accordion-label+.content {
 .service-icon {
   transition: transform 0.3s ease;
 }
+
 .service-icon:hover {
   transform: scale(1.2);
 }
-
-
-

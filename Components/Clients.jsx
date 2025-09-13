@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { createContext } from 'react';
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 function Clients() {
     const cardVariants = {
         hidden: { opacity: 0, y: 50 },
@@ -36,10 +38,37 @@ function Clients() {
                 </div>
 
 
-                {/* Grid Layout */}
-                <div className="relative flex overflow-x-hidden mt-20 pb-2">
-                    {/* First row */}
-                    <div className="flex space-x-7 animate-marquee">
+                {/* Grid Layout with Manual Buttons */}
+                <div className="relative mt-20 pb-2">
+                    {/* Left Button */}
+                    <motion.button
+                        onClick={() => document.getElementById("logoScroll").scrollBy({ left: -300, behavior: "smooth" })}
+                        whileHover={{ x: -5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                        style={{
+                            position: "absolute",
+                            left: "20px",
+                            top: "50%",
+                            transform: "translateY(-50%)",
+                            zIndex: 10,
+                            background: "rgba(0,0,0,0.4)",
+                            border: "none",
+                            borderRadius: "50%",
+                            padding: "10px",
+                            cursor: "pointer",
+                            color: "white",
+                        }}
+                    >
+                        <ChevronLeft size={28} />
+                    </motion.button>
+
+
+                    {/* Scrollable Row */}
+                    <div
+                        id="logoScroll"
+                        className="flex space-x-7 overflow-x-auto scrollbar-hide scroll-smooth px-12 pb-5"
+                        style={{ scrollBehavior: "smooth" }}
+                    >
                         {[
                             "/Assets/bennys-organo-removebg-preview.png",
                             "/Assets/client-1-removebg-preview.png",
@@ -53,34 +82,35 @@ function Clients() {
                         ].map((src, index) => (
                             <div
                                 key={index}
-                                className="backdrop-blur-md bg-white/20 border border-white/30 shadow-lg rounded-xl p-4 w-40 h-28 flex items-center justify-center"
+                                className="backdrop-blur-md bg-white/20 border border-white/30 shadow-lg rounded-xl p-4 w-40 h-28 flex items-center justify-center flex-shrink-0"
                             >
                                 <img src={src} alt={`Partner ${index + 1}`} className="max-h-16 object-contain" />
                             </div>
                         ))}
                     </div>
 
-                    {/* Duplicate row for seamless loop */}
-                    <div className="absolute top-0 flex space-x-7 animate-marquee2">
-                        {[
-                            "/Assets/bennys-organo-removebg-preview.png",
-                            "/Assets/client-1-removebg-preview.png",
-                            "/Assets/client-2-removebg-preview.png",
-                            "/Assets/client-4-removebg-preview.png",
-                            "/Assets/client-9-removebg-preview.png",
-                            "/Assets/Fams-removebg-preview.png",
-                            "/Assets/Fazza-removebg-preview.png",
-                            "/Assets/client-8-removebg-preview.png",
-                            "/Assets/client-10-removebg-preview.png",
-                        ].map((src, index) => (
-                            <div
-                                key={index}
-                                className="backdrop-blur-md bg-white/20 border border-white/30 shadow-lg rounded-xl p-4 w-40 h-28 flex items-center justify-center "
-                            >
-                                <img src={src} alt={`Partner ${index + 1}`} className="max-h-16 object-contain" />
-                            </div>
-                        ))}
-                    </div>
+
+                    {/* Right Button */}
+                    <motion.button
+                        onClick={() => document.getElementById("logoScroll").scrollBy({ left: 300, behavior: "smooth" })}
+                        whileHover={{ x: 5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                        style={{
+                            position: "absolute",
+                            right: "20px",
+                            top: "50%",
+                            transform: "translateY(-50%)",
+                            zIndex: 10,
+                            background: "rgba(0,0,0,0.4)",
+                            border: "none",
+                            borderRadius: "50%",
+                            padding: "10px",
+                            cursor: "pointer",
+                            color: "white",
+                        }}
+                    >
+                        <ChevronRight size={28} />
+                    </motion.button>
                 </div>
 
                 <div style={{ maxWidth: "1200px", margin: "0 auto", marginTop: '40px', backgroundColor: 'EAEAEA' }}>
