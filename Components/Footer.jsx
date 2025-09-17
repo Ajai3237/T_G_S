@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link";
 
 function Footer() {
     return (
@@ -45,16 +46,33 @@ function Footer() {
                         <h3 className="text-white font-semibold mb-4">Site Map</h3>
                         <ul className="space-y-2">
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> Home
+                                <Link href="/" className="flex items-center gap-2">
+                                    <span>&gt;</span> Home
+                                </Link>
                             </li>
+
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> About
+                                <Link href="/About" className="flex items-center gap-2">
+                                    <span>&gt;</span> About
+                                </Link>
                             </li>
+
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> Services
+                                <Link href="/Services" className="flex items-center gap-2">
+                                    <span>&gt;</span> Services
+                                </Link>
                             </li>
+
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> Contact
+                                <Link href="/Career" className="flex items-center gap-2">
+                                    <span>&gt;</span> Career
+                                </Link>
+                            </li>
+
+                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
+                                <Link href="/Contact" className="flex items-center gap-2">
+                                    <span>&gt;</span> Contact
+                                </Link>
                             </li>
                         </ul>
                     </div>

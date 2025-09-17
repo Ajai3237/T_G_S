@@ -1,11 +1,6 @@
 @import "tailwindcss";
 
-/* globals.css */
-/* body {
-  background-color: rgb(146, 137, 137);
-  margin: 0;
-  padding: 0;
-} */
+
 
 /* logo */
 
@@ -129,11 +124,10 @@ input[type="checkbox"]:checked+.accordion-label+.content {
 @media (max-width: 768px) {
   .parallax {
     background-attachment: scroll;
-    /* avoid buggy mobile zoom */
     background-size: cover;
-    /* show full image instead of crop */
+   
     background-position: top center;
-    /* better positioning */
+    
   }
 }
 
@@ -168,7 +162,6 @@ input[type="checkbox"]:checked+.accordion-label+.content {
 
 
 /*  clients card */
-/* Hide Scrollbar but keep scroll functionality */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -200,21 +193,21 @@ input[type="checkbox"]:checked+.accordion-label+.content {
   position: relative;
   color: white;
 
-  /* align content left */
+  
   display: flex;
   align-items: center;
-  /* vertically center */
+ 
   text-align: left;
 }
 
 @media (max-width: 768px) {
   .parallax2 {
     background-attachment: scroll;
-    /* avoid buggy mobile zoom */
+   
     background-size: cover;
-    /* show full image instead of crop */
+  
     background-position: top center;
-    /* better positioning */
+    
   }
 }
 

@@ -36,7 +36,6 @@ function Header() {
 
 
                 <div className="relative">
-                    
                     {/* Hamburger button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
@@ -44,7 +43,6 @@ function Header() {
                     >
                         {isOpen ? <X size={36} /> : <Menu size={36} />}
                     </button>
-
 
                     {/* Menu Overlay */}
                     <AnimatePresence>
@@ -54,7 +52,7 @@ function Header() {
                                 animate={{ x: 0 }}
                                 exit={{ x: "100%" }}
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                                className="fixed top-40 right-0 h-100 w-35 bg-black/40 text-white flex items-center justify-center z-40 rounded-4xl"
+                                className="absolute top-40   h-80 w-48 bg-black/60 text-white flex items-center justify-center z-40 rounded-3xl backdrop-blur-sm"
                             >
                                 <motion.ul
                                     variants={listVariants}
@@ -67,22 +65,16 @@ function Header() {
                                         <Link href="/">Home</Link>
                                     </motion.li>
                                     <motion.li variants={itemVariants} className="cursor-pointer hover:text-yellow-400">
-                                        <Link href="/about">About</Link>
+                                        <Link href="/About">About</Link>
                                     </motion.li>
                                     <motion.li variants={itemVariants} className="cursor-pointer hover:text-yellow-400">
-                                        <Link href="/services">Services</Link>
+                                        <Link href="/Services">Services</Link>
                                     </motion.li>
                                     <motion.li variants={itemVariants} className="cursor-pointer hover:text-yellow-400">
-                                        <Link href="/client">Client</Link>
+                                        <Link href="/Career">Career</Link>
                                     </motion.li>
                                     <motion.li variants={itemVariants} className="cursor-pointer hover:text-yellow-400">
-                                        <Link href="/solutions">Solutions</Link>
-                                    </motion.li>
-                                    <motion.li variants={itemVariants} className="cursor-pointer hover:text-yellow-400">
-                                        <Link href="/industries">Industries</Link>
-                                    </motion.li>
-                                    <motion.li variants={itemVariants} className="cursor-pointer hover:text-yellow-400">
-                                        <Link href="/contact">Contact Us</Link>
+                                        <Link href="/Contact">Contact Us</Link>
                                     </motion.li>
                                 </motion.ul>
                             </motion.div>
