@@ -1,11 +1,55 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import GlobalApi from "@/app/_uitils/GlobalApi";
+
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrollY, setScrollY] = useState(0);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [isScrollingDown, setIsScrollingDown] = useState(false);
+
+
+    const [HeaderData, setHeaderData] = useState([]);
+
+    const getHeaderDataList = () => {
+        GlobalApi.getHeaderData()
+            .then(res => {
+                console.log(res.data.data);
+                setHeaderData(res.data.data);
+            })
+            .catch(err => {
+                console.error("Error fetching category:", err);
+            });
+    };
+
+    useEffect(() => {
+        getHeaderDataList();
+    }, []);
+
+
+    // Track scroll position and direction
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            // Check if scrolling down
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                setIsScrollingDown(true);
+            } else {
+                setIsScrollingDown(false);
+            }
+
+            setLastScrollY(currentScrollY);
+            setScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
 
     // Variants for parent ul to stagger children
     const listVariants = {
@@ -21,69 +65,87 @@ function Header() {
 
     return (
         <header className="w-full z-50 bg-transparent absolute left-0 -top-23">
-            <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+            <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-15 lg:py-6">
 
                 {/* Logo */}
-                <div className="flex-shrink-0 ">
-                    <img
-                        src="/Assets/logo.png"
-                        alt="Logo"
-                        className="w-[300px] h-auto"
-                    />
-                </div>
+                {HeaderData[0] && (
+                    <div className="flex-shrink-0">
+                        <img
+                            src={HeaderData[0].herader_image?.[0]?.url || "/fallback.webp"}
+                            alt="Logo"
+                            width={300}      // intrinsic width
+                            height={80}
 
-
-
+                            className="w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] h-auto "
+                        />
+                    </div>
+                )}
 
                 <div className="relative">
-                    {/* Hamburger button */}
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="text-white z-50 relative p-2 transition-transform duration-200 hover:scale-110"
-                    >
-                        {isOpen ? <X size={36} /> : <Menu size={36} />}
-                    </button>
-
-                    {/* Menu Overlay */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            className="text-white z-50 relative p-2 transition-transform duration-200 hover:scale-110 focus:outline-none  rounded"
+          >
+            {isOpen ? <X size={36} /> : <Menu size={36} />}
+          </button>
                     <AnimatePresence>
                         {isOpen && (
-                            <motion.div
-                                initial={{ x: "100%" }}
-                                animate={{ x: 0 }}
-                                exit={{ x: "100%" }}
-                                transition={{ duration: 0.3, ease: "easeInOut" }}
-                                className="absolute top-40   h-80 w-48 bg-black/60 text-white flex items-center justify-center z-40 rounded-3xl backdrop-blur-sm"
-                            >
-                                <motion.ul
-                                    variants={listVariants}
-                                    initial="closed"
-                                    animate="open"
-                                    exit="closed"
-                                    className="flex flex-col space-y-6 text-center text-xl font-medium"
+                            <>
+                                {/* Backdrop */}
+                                <motion.div
+                                    key="backdrop"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.18 }}
+                                    className="fixed inset-0 z-30 bg-black/40"
+                                    onClick={() => setIsOpen(false)}
+                                />
+
+                                {/* Sliding Menu */}
+                                <motion.nav
+                                    key="menu"
+                                    initial={{ x: "100%" }}
+                                    animate={{
+                                        x: isScrollingDown ? "100%" : 0,
+                                        opacity: isScrollingDown ? 0 : 1,
+                                    }}
+                                    exit={{ x: "100%" }}
+                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    className="fixed right-0 z-40 w-56 sm:w-50 md:w-72 lg:w-80 bg-black/70 text-white backdrop-blur-md rounded-l-3xl p-4 sm:p-5 md:p-6 lg:p-8"
+                                    style={{ top: `${scrollY + 120}px` }}
                                 >
-                                    <motion.li variants={itemVariants} className="cursor-pointer hover:text-yellow-400">
-                                        <Link href="/">Home</Link>
-                                    </motion.li>
-                                    <motion.li variants={itemVariants} className="cursor-pointer hover:text-yellow-400">
-                                        <Link href="/About">About</Link>
-                                    </motion.li>
-                                    <motion.li variants={itemVariants} className="cursor-pointer hover:text-yellow-400">
-                                        <Link href="/Services">Services</Link>
-                                    </motion.li>
-                                    <motion.li variants={itemVariants} className="cursor-pointer hover:text-yellow-400">
-                                        <Link href="/Career">Career</Link>
-                                    </motion.li>
-                                    <motion.li variants={itemVariants} className="cursor-pointer hover:text-yellow-400">
-                                        <Link href="/Contact">Contact Us</Link>
-                                    </motion.li>
-                                </motion.ul>
-                            </motion.div>
+                                    <motion.ul
+                                        variants={listVariants}
+                                        initial="closed"
+                                        animate="open"
+                                        exit="closed"
+                                        className="flex flex-col space-y-6 text-center text-lg md:text-xl font-medium"
+                                    >
+                                        {[
+                                            { href: "/", label: "Home" },
+                                            { href: "/About", label: "About" },
+                                            { href: "/Services", label: "Services" },
+                                            { href: "/Career", label: "Career" },
+                                            { href: "/Contact", label: "Contact Us" },
+                                        ].map((item, i) => (
+                                            <motion.li
+                                                key={i}
+                                                variants={itemVariants}
+                                                className="cursor-pointer hover:text-yellow-400"
+                                            >
+                                                <Link href={item.href} onClick={() => setIsOpen(false)}>
+                                                    {item.label}
+                                                </Link>
+                                            </motion.li>
+                                        ))}
+                                    </motion.ul>
+                                </motion.nav>
+                            </>
                         )}
                     </AnimatePresence>
                 </div>
-
-
-
             </div>
         </header>
     )

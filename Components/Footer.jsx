@@ -8,10 +8,7 @@ function Footer() {
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
                     {/* Column 1 */}
                     <div>
-                        <p className="mb-4">
-                            Lorem Ipsum Dolor Sit Amet <br />
-                            Aspernatur Exercitationem Fugiat.
-                        </p>
+
                         <h3 className="text-white font-semibold mb-3">Follow Us</h3>
                         <div className="flex justify-center md:justify-start gap-3">
                             <a
@@ -47,48 +44,32 @@ function Footer() {
                         <ul className="space-y-2">
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <Link href="/" className="flex items-center gap-2">
-                                    <span>&gt;</span> Home
+                                    Home
                                 </Link>
                             </li>
 
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <Link href="/About" className="flex items-center gap-2">
-                                    <span>&gt;</span> About
+                                    About
                                 </Link>
                             </li>
 
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <Link href="/Services" className="flex items-center gap-2">
-                                    <span>&gt;</span> Services
+                                    Services
                                 </Link>
                             </li>
 
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <Link href="/Career" className="flex items-center gap-2">
-                                    <span>&gt;</span> Career
+                                    Career
                                 </Link>
                             </li>
 
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
                                 <Link href="/Contact" className="flex items-center gap-2">
-                                    <span>&gt;</span> Contact
+                                    Contact
                                 </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Column 3 */}
-                    <div>
-                        <h3 className="text-white font-semibold mb-4">Follow Us</h3>
-                        <ul className="space-y-2">
-                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> Facebook
-                            </li>
-                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> Instagram
-                            </li>
-                            <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> Linkedin
                             </li>
                         </ul>
                     </div>
@@ -98,22 +79,37 @@ function Footer() {
                         <h3 className="text-white font-semibold mb-4">Our Services</h3>
                         <ul className="space-y-2">
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> Web Design
+                                Web Design
                             </li>
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> Web Development
+                                Web Development
                             </li>
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> Product Management
+                                Product Management
                             </li>
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> Marketing
+                                Marketing
                             </li>
                             <li className="flex items-center justify-center md:justify-start gap-2 hover:text-yellow-400 cursor-pointer">
-                                <span>&gt;</span> Graphic Design
+                                Graphic Design
                             </li>
                         </ul>
                     </div>
+
+
+
+
+                    {/* Column 3 */}
+                    <div>
+                        <p className="mb-4">
+                             Traits Global Solutions
+                            2/1149/1100,Door No.2211,
+                            HiLITE Business Park,Phase2, 2nd floor, Poovangal,Pantheeramkavu
+                            Calicut, Kerala - 673014 
+                        </p>
+                    </div>
+
+
                 </div>
 
 
